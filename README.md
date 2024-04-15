@@ -45,7 +45,7 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 
 ## Acknowledgments
 - Thanks to OpenAI for providing the API for transcription and summarization.
-- Special thanks to everyone who contributed to the project.
+- Special thanks to anyone who contributes to the project.
 
 
 
