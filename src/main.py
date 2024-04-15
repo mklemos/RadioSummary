@@ -1,3 +1,10 @@
+# main.py
+"""
+This module controls the overall operation of capturing, transcribing, and summarizing
+radio streams. It handles user input for station selection, captures audio streams,
+transcribes the audio, and provides a summary of the transcribed text.
+"""
+
 import os
 from openai import OpenAI
 from stream_utils import get_radio_stream_url
@@ -9,6 +16,14 @@ from summarize import summarize_text
 transcriptions = []
 
 def summarize_large_text(transcriptions, chunk_size, summarizer):
+    """
+    Summarizes large text by dividing it into chunks and summarizing each chunk.
+
+    :param transcriptions: List of transcription segments.
+    :param chunk_size: Number of segments to include in each chunk for summarization.
+    :param summarizer: Function to use for summarizing text.
+    :return: A string that is the final summary of all chunks.
+    """
     final_summary = ""
     for i in range(0, len(transcriptions), chunk_size):
         chunk = " ".join(" ".join(words) for words in transcriptions[i:i+chunk_size])
@@ -16,7 +31,22 @@ def summarize_large_text(transcriptions, chunk_size, summarizer):
         final_summary += summary + "\n"
     return final_summary.strip()
 
+def create_summarizer(client):
+    """
+    Creates a summarization function using a given OpenAI client.
+
+    :param client: The OpenAI client used for generating summaries.
+    :return: A function that takes text and returns its summary.
+    """
+    def summarizer(text):
+        return summarize_text(text, client)
+    return summarizer
+
 def main():
+    """
+    Main function to run the radio analysis project. Handles user input, stream capture,
+    audio transcription, and text summarization.
+    """
     api_key = os.getenv("OPENAI_API_KEY")
     if not api_key:
         print("No API key found. Set the OPENAI_API_KEY environment variable.")
@@ -62,7 +92,7 @@ def main():
         # Summarize the accumulated transcriptions before exiting
         if transcriptions:
             chunk_size = 1000  # Define your chunk size
-            summarizer = lambda text: summarize_text(text, client)  # Define your summarization function
+            summarizer = create_summarizer(client)  # Create summarization function
             final_summary = summarize_large_text(transcriptions, chunk_size, summarizer)
             print("Final Summary:", final_summary)
         print("Exiting...")

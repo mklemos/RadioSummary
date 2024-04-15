@@ -1,5 +1,5 @@
-from openai import OpenAI
 import os
+from openai import OpenAI
 
 def transcribe_audio(file_path, client):
     client = OpenAI(api_key=os.environ.get("OPENAI_API_KEY"))
