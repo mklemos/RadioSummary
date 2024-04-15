@@ -30,7 +30,7 @@ To start the project, run the following command in the project directory:
 You will be prompted to enter the name of the radio station. After entering a valid station name, the system will begin processing the stream.
 
 ## Configuration
-Edit the `config.py` file to add or modify the list of radio stations and other settings such as transcription and summarization preferences.
+Edit the `stream_utils.py` file to add or modify the list of radio stations.
 
 ## Contributing
 Contributions to the project are welcome. Please follow these steps:
