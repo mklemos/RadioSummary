@@ -18,7 +18,7 @@ Before you run this project, ensure you have the following installed:
 ## Installation
 Follow these steps to set up the project environment:
 1. Clone the repository:
-    - `git clone https://github.com/yourusername/radio-analysis-project.git`
+    - `git clone https://github.com/mklemos/radio-analysis-project.git`
     - `cd radio-analysis-project`
 2. Install the necessary Python packages:
     - `pip install -r requirements.txt`
