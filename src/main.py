@@ -83,7 +83,7 @@ def main():
             transcript = transcribe_audio(file_path, client)
             if transcript:
                 print("Transcript:", transcript)
-                transcriptions.append(transcript.split())  # Store the transcription as a list of words
+                transcriptions.append(transcript.split())  # Store transcription as a word list
             else:
                 print("Failed to transcribe audio")
                 continue

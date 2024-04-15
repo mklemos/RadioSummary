@@ -5,8 +5,8 @@ capture audio from these streams using ffmpeg.
 """
 
 import os
-import requests
 import subprocess
+import requests
 
 def get_radio_stream_url(station_name):
     """

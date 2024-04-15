@@ -21,7 +21,7 @@ def summarize_text(text, client):
             ],
             max_tokens=150
         )
-        return response.choices[0].message.content.strip() if response.choices else "No summary available."
+        return response.choices[0].message.content.strip() if response.choices else "No summary."
 
     except Exception as e:  # Catch-all for any other unexpected errors
         print(f"An unexpected error occurred: {e}")
