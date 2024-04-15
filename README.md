@@ -1,10 +1,10 @@
 # Radio Analysis Project
 
 ## Description
-This project automates the process of capturing, transcribing, and summarizing live radio streams. It uses OpenAI's Whisper model for transcription and the GPT-4 model for generating summaries of the transcribed text. This allows for detailed analysis and understanding of content from various radio stations.
+This project automates the process of capturing, transcribing, and summarizing live radio streams. It utilizes OpenAI's Whisper model for transcription and the GPT-4 model for generating summaries of the transcribed text. Additionally, it fetches radio station stream URLs using the Radio Browser API, allowing for detailed analysis and understanding of content from various radio stations.
 
 ## Features
-- **Stream Capture**: Captures live audio from predefined radio stations.
+- **Stream Capture**: Captures live audio from predefined radio stations using URLs fetched from the Radio Browser API.
 - **Audio Transcription**: Utilizes OpenAI's Whisper model to transcribe audio content to text.
 - **Text Summarization**: Leverages OpenAI's GPT-4 model to summarize transcribed texts.
 - **Continuous Operation**: Designed to run continuously until manually stopped, making it ideal for long-term data collection.
@@ -18,14 +18,14 @@ Before you run this project, ensure you have the following installed:
 ## Installation
 Follow these steps to set up the project environment:
 1. Clone the repository:
-    `git clone https://github.com/yourusername/radio-analysis-project.git`
-    `cd radio-analysis-project`
+    - `git clone https://github.com/yourusername/radio-analysis-project.git`
+    - `cd radio-analysis-project`
 2. Install the necessary Python packages:
-    `pip install -r requirements.txt`
+    - `pip install -r requirements.txt`
 
 ## Usage
 To start the project, run the following command in the project directory:
-    `python main.py`
+ `python main.py`
 
 You will be prompted to enter the name of the radio station. After entering a valid station name, the system will begin processing the stream.
 
