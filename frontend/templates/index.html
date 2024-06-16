@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Radio Summary</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        input, button {
+            margin: 10px 0;
+            padding: 10px;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Radio Summary</h1>
+        <input type="text" id="station" placeholder="Enter station name">
+        <button onclick="captureAndSummarize()">Start</button>
+        <h2>Transcription</h2>
+        <div id="transcription"></div>
+        <h2>Summary</h2>
+        <div id="summary"></div>
+    </div>
+
+    <script>
+        async function captureAndSummarize() {
+            const station = document.getElementById('station').value;
+
+            const response = await fetch('/api/capture-and-summarize', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ station }),
+            });
+
+            const data = await response.json();
+            document.getElementById('transcription').innerText = data.transcription;
+            document.getElementById('summary').innerText = data.summary;
+        }
+    </script>
+</body>
+</html>
+
