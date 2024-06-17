@@ -1,7 +1,7 @@
 # Radio Analysis Project
 
 ## Description
-This project automates the process of capturing, transcribing, and summarizing live radio streams. It utilizes OpenAI's Whisper model for transcription and the GPT-4 model for generating summaries of the transcribed text. Additionally, it fetches radio station stream URLs using the Radio Browser API, allowing for detailed analysis and understanding of content from various radio stations. The project now includes a Flask backend and integrates the MesloP model for enhanced transcription and summarization.
+This project automates the process of capturing, transcribing, and summarizing live radio streams. It utilizes OpenAI's Whisper model for transcription and the GPT-4 model for generating summaries of the transcribed text. Additionally, it fetches radio station stream URLs using the Radio Browser API, allowing for detailed analysis and understanding of content from various radio stations. The project now includes a Flask backend and integrates the Mesop for python UI.
 
 ## Features
 - **Stream Capture**: Captures live audio from predefined radio stations using URLs fetched from the Radio Browser API.
